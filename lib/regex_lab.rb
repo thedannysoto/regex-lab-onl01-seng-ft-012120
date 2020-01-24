@@ -26,5 +26,10 @@ def first_word_capitalized_and_ends_with_punctuation?(text)
 end
 
 def valid_phone_number?(phone)
-
+  regex = /(\b[0-9]{10}\b)|(\([0-9]{3}\))([0-9]{3})-([0-9]{4})\b|(\([0-9]{3}\))([0-9]{7})\b|([0-9]{3})\s([0-9]{3})\s([0-9]{4})\b/
+  if phone.match(regex) == nil
+    return false 
+  else 
+    return true 
+  end 
 end
